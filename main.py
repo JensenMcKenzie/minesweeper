@@ -2,7 +2,7 @@ from tkinter import *
 import random
 
 window = Tk()
-window.geometry("760x920")
+window.geometry("480x650")
 rows = 20
 columns = 20
 flag = False
@@ -115,7 +115,9 @@ def generateGrid():
 
 
 flag = Button(text="Flag Toggle", width=10, height=3, command=flagtoggle)
-flag.place(x=500, y=600)
+flag.place(x=360, y=550)
+cheat = Button(text="Cheat", width=10, height=3)
+cheat.place(x=30, y=550)
 x = Button(text="Start", width=20, height=3, command=generateGrid)
-x.place(x=310, y=600)
+x.place(x=160, y=550)
 window.mainloop()
