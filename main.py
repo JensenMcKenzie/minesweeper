@@ -37,8 +37,6 @@ def cheat():
 
 def flagtoggle():
     global flagStatus
-    for b in done:
-        b.configure(bg='blue')
     flagStatus = not flagStatus
     if not flagStatus:
         flag.configure(relief='raised')
@@ -133,7 +131,7 @@ def buttonpress(b):
         elif boardTwo[x][y] == -1:
             for i in range(0, 20):
                 for j in range(0, 20):
-                    board[i][j].configure(text='', bg='red')
+                    board[i][j].configure(text='', bg='red', state=DISABLED)
             gameOver = True
         else:
             if b.cget('text') == '':
@@ -145,9 +143,8 @@ def buttonpress(b):
     if len(done) == 400 - bombAmount:
         for i in range(0, 20):
             for j in range(0, 20):
-                board[i][j].configure(text='', bg='green')
+                board[i][j].configure(text='', bg='green', state=DISABLED)
         gameOver = True
-    print(len(done), 400 - bombAmount, bombAmount)
 
 
 def generategrid():
